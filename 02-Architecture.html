@@ -36,7 +36,7 @@
                     <ol>blue: attention between prefix tokens</ol>
                     <ol>green: attention between prefix and target tokens</ol>
                     <ol>yellow: attention between target tokens, grey: masked attention</ol>
-                    <img src="architectures" width="800px">
+                    <img src="architectures" width="802px">
                     <p>Causal Decoder Architecture: This architecture includes a one-way attention mask to ensure that each input token can focus on the past tokens and itself only. The input and output tokens are processed in the same way by the decoder.</p>
                     <p>Prefix Decoder Architecture: This architecture modifies the mask mechanism of the causal decoder to allow two-way attention to the prefix token and only one-way attention to the generated token. In this way, just like encoder-decoder architecture, the prefix decoder can encode the prefix sequence bidirectionally and automatically regression to predict the output label one by one, where the same parameters are shared during encoding and decoding. Instead of pre-training from scratch, it seems better to continuously train the causal decoder and then convert it into a prefix decoder to speed up the convergence.</p>
                     <p>Encoder-decoder Architecture: The architecture consists of two stacks of Transformer modules, one as an encoder and other one as a decoder. The encoder encodes the input sequence with stacked multi-head self-attention layers to generate its underlying representation, while the decoder cross-focuses on these representations and autoregressively generates the target sequence.</p>
